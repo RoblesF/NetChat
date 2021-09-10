@@ -1,6 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Channels;
+using Domain;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -11,27 +15,28 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ChannelsController : ControllerBase
     {
-        private readonly DataContext _dbContext;
-        public ChannelsController(DataContext dataContext)
+        private readonly IMediator _mediator;
+        public ChannelsController(IMediator mediator)
         {
-            _dbContext = dataContext;
+            _mediator = mediator;
         }
 
-        public async Task<IActionResult> GetChannels()
+        [HttpGet]
+        public async Task<ActionResult<List<Channel>>> List()
         {
-            var channels = await _dbContext.Channels.ToListAsync();
-            return Ok(channels);
+            return await _mediator.Send(new List.Query());
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetChannel(Guid id)
+        [HttpGet("{ChannelId}")]
+        public async Task<ActionResult<Channel>> GetChannel(Guid ChannelId)
         {
-            var channel = await _dbContext.Channels.FindAsync(id);
-            if (channel is null)
-            {
-                return NotFound();
-            }
-            return Ok(channel);
+            return await _mediator.Send(new Details.Query { Id = ChannelId });
+        }
+
+        [HttpPost]
+        public async Task<Unit> CreateChannel(Create.Command command)
+        {
+            return await _mediator.Send(command);
         }
     }
 }

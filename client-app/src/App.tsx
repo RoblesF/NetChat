@@ -1,31 +1,27 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import logo from './logo.svg'
 import './App.css'
+import { Grid } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
+import SidePanel from './components/SidePanel/SidePanel'
+import { ColorPanel } from './components/ColorPanel/ColorPanel'
+import { Messages } from './components/Message/Messages'
+import MetaPanel from './components/MetaPanel/MetaPanel'
 
 class App extends Component {
-  state = {
-    channels: []
-  }
-  componentDidMount() {
-    axios.get('http://localhost:5000/api/channels').then((response) => {
-      this.setState({
-        channels: response.data
-      })
-    })
-  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <ul>
-          {this.state.channels.map((value: any) => (
-            <li key={value.id}>{value.name}</li>
-          ))}
-        </ul>
-      </div>
+      <Grid columns="equal" className="app">
+        <ColorPanel />
+        <SidePanel />
+
+        <Grid.Column style={{ marginLeft: 320 }}>
+          <Messages />
+        </Grid.Column>
+
+        <Grid.Column width={4}>
+          <MetaPanel />
+        </Grid.Column >
+      </Grid>
     )
   }
 }

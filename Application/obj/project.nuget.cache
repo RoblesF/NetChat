@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "08N2BR0RDnBGAL6zhEljXZCVtnV445ex5Z8bB6yR3F4Rmgxl70veBWoQ9T2Hc/1h6qL9GUpFHh0zMy4eG99Z+Q==",
+  "dgSpecHash": "RkPmW6ODK3MEygQSm//mOePbTvjqfT3jWZf0LtAGbjFYahZWKJyltSWNUBcIa7rqHDBLxwLEEPehduvenUfjKA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Robles\\Documents\\NetChat\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Robles\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
