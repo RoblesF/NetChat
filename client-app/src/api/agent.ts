@@ -1,7 +1,21 @@
-import axios, { AxiosResponse } from 'axios'
-import { IChannel } from '../models/channels'
+import axios, { AxiosResponse } from 'axios';
+import { IChannel } from '../models/channels';
+import { History } from '../index';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'http://localhost:5000/api'
+
+axios.interceptors.response.use(undefined, (error) => {
+    if (error.message === 'Network Error' && !error.response) {
+        toast.error('API unreachable')
+        return;
+    }
+
+    const { status } = error.response;
+
+    status === 404 && History.push('/notfound')
+    status === 500 && toast.error('500 Server error')
+})
 
 const responseBody = (response: AxiosResponse) => response.data
 
