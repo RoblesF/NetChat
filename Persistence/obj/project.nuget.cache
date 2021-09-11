@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bwYH7ZN5o7ggGSr7+XcO5WnBjx7bYdLoKJ5FXchiwoWJFWB1eKPz2T3qoFRMqrdmylwhdSZoLwyPVmbSbSUQhw==",
+  "dgSpecHash": "hvfgq4LowhNmm9jV9CEfGA6GEJ4X8TZ2pr6cxgP4fTl/ezyhz2oFgDh+XAyHpcvq9sU2Os1Hrxjy2ocbyW3rtQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.18\\microsoft.aspnetcore.cryptography.internal.3.1.18.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.18\\microsoft.aspnetcore.cryptography.keyderivation.3.1.18.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.18\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -21,6 +24,8 @@
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.18\\microsoft.extensions.configuration.binder.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.18\\microsoft.extensions.dependencyinjection.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.18\\microsoft.extensions.dependencyinjection.abstractions.3.1.18.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.identity.core\\3.1.18\\microsoft.extensions.identity.core.3.1.18.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.18\\microsoft.extensions.identity.stores.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.logging\\3.1.18\\microsoft.extensions.logging.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.18\\microsoft.extensions.logging.abstractions.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.options\\3.1.18\\microsoft.extensions.options.3.1.18.nupkg.sha512",
