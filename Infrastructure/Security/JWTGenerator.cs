@@ -17,7 +17,7 @@ namespace Infrastructure.Security
                 new Claim(JwtRegisteredClaimNames.NameId, appUser.UserName)
             };
 
-            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("My hardcoded token")); //Key created
+            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Definitely not a key")); //Key created
 
             SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature); //Credentials created
 
