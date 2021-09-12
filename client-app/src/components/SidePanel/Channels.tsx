@@ -3,12 +3,12 @@ import { Icon, Menu } from "semantic-ui-react"
 import { IChannel } from '../../models/channels'
 import { ChannelItem } from "./ChannelItem"
 import ChannelForm from "./ChannelForm"
-import ChannelStore from "../../stores/ChannelStore"
 import { observer } from 'mobx-react-lite'
+import { RootStoreContext } from "../../stores/rootStore"
 
 const Channels = () => {
-    // const [channels, setChannels] = useState<IChannel[]>([])
-    const { loadChannels, setModalVisible, channelsMobx } = useContext(ChannelStore)
+    const rootStore = useContext(RootStoreContext)
+    const { channelsMobx, loadChannels, setModalVisible } = rootStore.channelStore
 
     useEffect(() => {
         loadChannels()

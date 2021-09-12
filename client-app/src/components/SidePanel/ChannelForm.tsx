@@ -2,8 +2,8 @@ import React, { ChangeEvent, useContext, useState } from "react"
 import { Button, Form, Icon, Input, Modal } from "semantic-ui-react"
 import { IChannel } from "../../models/channels"
 import { v4 as uuid } from 'uuid'
-import ChannelStore from '../../stores/ChannelStore'
 import { observer } from 'mobx-react-lite'
+import { RootStoreContext } from "../../stores/rootStore"
 
 const ChannelForm: React.FC = () => {
     const emptyChannel = {
@@ -13,7 +13,8 @@ const ChannelForm: React.FC = () => {
     }
 
     const [channel, setChannel] = useState<IChannel>(emptyChannel)
-    const { isModalVisible, setModalVisible, createChannel } = useContext(ChannelStore)
+    const rootStore = useContext(RootStoreContext)
+    const { isModalVisible, setModalVisible, createChannel } = rootStore.channelStore
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setChannel({ ...channel, [event.target.name]: event.target.value })
     }

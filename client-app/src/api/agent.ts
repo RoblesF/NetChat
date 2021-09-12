@@ -28,8 +28,8 @@ const request = {
 }
 
 export const channelsAgent = {
-    list: (): Promise<IChannel[]> => request.get('/channels'),
-    create: (channel: IChannel) => request.post('/channels', channel)
+    list: (): Promise<IChannel[]> => request.get('/channels/getchannels'),
+    create: (channel: IChannel) => request.post('/channels/getchannel', channel)
 }
 
 export const usersAgent = {
