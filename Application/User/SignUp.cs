@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Application.Errors;
 using Application.Interfaces;
+using Application.Validators;
 using Domain;
 using FluentValidation;
 using MediatR;
@@ -22,11 +23,18 @@ namespace Application.User
 
         public class CommandValidator : AbstractValidator<Command>
         {
-            public CommandValidator()
+            public CommandValidator(UserManager<AppUser> userManager)
             {
-                RuleFor(x => x.Username).NotEmpty();
-                RuleFor(x => x.Email).NotEmpty();
-                RuleFor(x => x.Password).NotEmpty();
+                RuleFor(x => x.Username)
+                .NotEmpty()
+                .MustAsync(async (username, cancellation) => await userManager.FindByNameAsync(username) == null)
+                .WithMessage("Username already exists");
+                RuleFor(x => x.Email)
+                .NotEmpty()
+                .EmailAddress()
+                .MustAsync(async (email, cancellation) => await userManager.FindByEmailAsync(email) == null)
+                .WithMessage("Email already exists");
+                RuleFor(x => x.Password).Password();
             }
         }
 
@@ -41,16 +49,6 @@ namespace Application.User
             }
             public async Task<UserDTO> Handle(Command request, CancellationToken cancellationToken)
             {
-                if (await _userManager.FindByEmailAsync(request.Email) != null)
-                {
-                    throw new RestException(HttpStatusCode.BadRequest, new { SignUp = "Email already taken" });
-                }
-
-                if (await _userManager.FindByNameAsync(request.Username) != null)
-                {
-                    throw new RestException(HttpStatusCode.BadRequest, new { SignUp = "Username already taken" });
-                }
-
                 AppUser user = new AppUser
                 {
                     Email = request.Email,
@@ -61,7 +59,7 @@ namespace Application.User
 
                 if (result.Succeeded)
                 {
-                    new UserDTO
+                    return new UserDTO
                     {
                         Email = user.Email,
                         UserName = user.UserName,
