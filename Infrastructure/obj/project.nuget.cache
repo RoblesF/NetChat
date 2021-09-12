@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZfxgOlMBEqJj1GqeWwU/7zl2GQ77qiOb5mDjH9ZB1Izapi6TiBog4jLgq2qRSgEKmZ+AvU2apJZnVQN++5dV9g==",
+  "dgSpecHash": "vJqNv4WQwxlyxPNFdpGA0LAaZ+FjC/siSHdBF0NCrRa4n5hBxCaOdOZTeO4iABMMcf1uz61IbUhwjYP8IdDj6Q==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Robles\\Documents\\NetChat\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\Robles\\Documents\\NetChat\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robles\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",

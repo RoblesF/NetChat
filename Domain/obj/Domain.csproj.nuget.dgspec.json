@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
+    "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Robles\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robles\\AppData\\Roaming\\NuGet\\NuGet.Config",
