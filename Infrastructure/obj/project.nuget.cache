@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mFfMDRcfWCk9FTiadTz3davpIrROmcijx0ejX4N6jS/erIbfOuOtdbWtfz54/2bq5jwgnrQ/3SXJIdGu7aT3hw==",
+  "dgSpecHash": "ZfxgOlMBEqJj1GqeWwU/7zl2GQ77qiOb5mDjH9ZB1Izapi6TiBog4jLgq2qRSgEKmZ+AvU2apJZnVQN++5dV9g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Robles\\Documents\\NetChat\\Application\\Application.csproj",
+  "projectFilePath": "c:\\Users\\Robles\\Documents\\NetChat\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robles\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
@@ -36,7 +36,7 @@
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.options\\3.1.18\\microsoft.extensions.options.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.18\\microsoft.extensions.primitives.3.1.18.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
-    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.5.0\\microsoft.identitymodel.jsonwebtokens.5.5.0.nupkg.sha512",
+    "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.12.2\\microsoft.identitymodel.jsonwebtokens.6.12.2.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identitymodel.logging\\6.12.2\\microsoft.identitymodel.logging.6.12.2.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.5.0\\microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
     "C:\\Users\\Robles\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",

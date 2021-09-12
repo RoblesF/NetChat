@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj": {}
+    "c:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
+    "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
+        "projectUniqueName": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
+        "projectPath": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Robles\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\obj\\",
+        "outputPath": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robles\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj": {
+    "c:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "c:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj",
+        "projectPath": "c:\\Users\\Robles\\Documents\\NetChat\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Robles\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robles\\Documents\\NetChat\\Persistence\\obj\\",
+        "outputPath": "c:\\Users\\Robles\\Documents\\NetChat\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robles\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj"
+              "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj": {
+                "projectPath": "c:\\Users\\Robles\\Documents\\NetChat\\Domain\\Domain.csproj"
               }
             }
           }
