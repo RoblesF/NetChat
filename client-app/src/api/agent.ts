@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { IChannel } from '../models/channels';
 import { History } from '../index';
 import { toast } from 'react-toastify';
+import { ISignForm, IUser } from '../models/users'
 
 axios.defaults.baseURL = 'http://localhost:5000/api'
 
@@ -29,4 +30,10 @@ const request = {
 export const channelsAgent = {
     list: (): Promise<IChannel[]> => request.get('/channels'),
     create: (channel: IChannel) => request.post('/channels', channel)
+}
+
+export const usersAgent = {
+    signin: (user: ISignForm): Promise<IUser> => request.post('/users/signin', user),
+    signup: (user: ISignForm): Promise<IUser> => request.post('/users/signup', user),
+    getcurrentuser: (): Promise<IUser> => request.get('/users/getcurrentuser')
 }
