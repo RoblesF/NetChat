@@ -71,3 +71,4 @@ C:\Users\Robles\Documents\NetChat\API\bin\Debug\net5.0\FluentValidation.AspNetCo
 C:\Users\Robles\Documents\NetChat\API\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Robles\Documents\NetChat\API\bin\Debug\net5.0\Infrastructure.dll
 C:\Users\Robles\Documents\NetChat\API\bin\Debug\net5.0\Infrastructure.pdb
+C:\Users\Robles\Documents\NetChat\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

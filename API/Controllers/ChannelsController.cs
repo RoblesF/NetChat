@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Channels;
 using Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -20,6 +21,7 @@ namespace API.Controllers
             return await Mediator.Send(new List.Query());
         }
 
+        [Authorize]
         [HttpGet("{ChannelId}")]
         public async Task<ActionResult<Channel>> GetChannel(Guid ChannelId)
         {

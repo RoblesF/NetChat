@@ -410,10 +410,10 @@
           "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
         }
       },
-      "Microsoft.IdentityModel.JsonWebTokens/6.12.2": {
+      "Microsoft.IdentityModel.JsonWebTokens/6.7.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "6.12.2"
+          "Microsoft.IdentityModel.Tokens": "6.7.1"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
@@ -2221,10 +2221,10 @@
         "ref/xamarinmac20/Microsoft.Identity.Client.xml"
       ]
     },
-    "Microsoft.IdentityModel.JsonWebTokens/6.12.2": {
-      "sha512": "krI9z6wjjIMCoQRmRicPt5oy9qrpCyXJhopkv4L+8uoN8l+NTmyv+gUCxkZKjiBqChgCL4cMvYCAkVdbjgpj+g==",
+    "Microsoft.IdentityModel.JsonWebTokens/6.7.1": {
+      "sha512": "q/Ii8ILV8cM1X49gnl12cJK+0KWiI1xUeiLYiE9+uRonJLaHWB0l8t89rGnZTEGthGKItyikKSB38LQpfy/zBw==",
       "type": "package",
-      "path": "microsoft.identitymodel.jsonwebtokens/6.12.2",
+      "path": "microsoft.identitymodel.jsonwebtokens/6.7.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2232,11 +2232,9 @@
         "lib/net45/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "lib/net472/Microsoft.IdentityModel.JsonWebTokens.dll",
-        "lib/net472/Microsoft.IdentityModel.JsonWebTokens.xml",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
         "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
-        "microsoft.identitymodel.jsonwebtokens.6.12.2.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",
         "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
@@ -5726,7 +5724,7 @@
     "net5.0": [
       "Application >= 1.0.0",
       "Domain >= 1.0.0",
-      "Microsoft.IdentityModel.JsonWebTokens >= 6.12.2"
+      "Microsoft.IdentityModel.JsonWebTokens >= 6.7.1"
     ]
   },
   "packageFolders": {
@@ -5777,7 +5775,7 @@
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": {
             "target": "Package",
-            "version": "[6.12.2, )"
+            "version": "[6.7.1, )"
           }
         },
         "imports": [

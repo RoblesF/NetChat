@@ -184,7 +184,7 @@
           "dependencies": {
             "Microsoft.IdentityModel.JsonWebTokens": {
               "target": "Package",
-              "version": "[6.12.2, )"
+              "version": "[6.7.1, )"
             }
           },
           "imports": [
