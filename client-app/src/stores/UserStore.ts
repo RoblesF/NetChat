@@ -23,9 +23,16 @@ export default class UserStore {
             runInAction(() => {
                 this.user = user
                 History.push('/')
+                this.rootStore.commonStore.setToken(user.token)
             })
         } catch (error) {
             throw error
         }
+    }
+
+    @action signout = () => {
+        this.rootStore.commonStore.setToken(null)
+        this.user = null
+        History.push('/signin')
     }
 }
