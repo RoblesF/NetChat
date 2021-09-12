@@ -21,7 +21,6 @@ namespace API.Controllers
             return await Mediator.Send(new List.Query());
         }
 
-        [Authorize]
         [HttpGet("{ChannelId}")]
         public async Task<ActionResult<Channel>> GetChannel(Guid ChannelId)
         {
