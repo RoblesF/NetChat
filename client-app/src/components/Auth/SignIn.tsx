@@ -7,8 +7,14 @@ import { useContext } from "react"
 import { RootStoreContext } from "../../stores/rootStore"
 import { ISignForm } from "../../models/users"
 import { FORM_ERROR } from "final-form"
+import { combineValidators, isRequired } from "revalidate"
 
 export const SignIn = () => {
+    const validate = combineValidators({
+        email: isRequired('Email'),
+        password: isRequired('Password')
+    })
+
     const rootStore = useContext(RootStoreContext)
     const { signin } = rootStore.userStore
 
@@ -24,6 +30,7 @@ export const SignIn = () => {
                 </Header>
                 <FinalForm
                     onSubmit={handleFormSubmit}
+                    validate={validate}
                     render={({ handleSubmit, submitting, form, submitError }) => (
                         <Form size="large" onSubmit={handleSubmit}>
                             <Segment stacked>
@@ -38,7 +45,7 @@ export const SignIn = () => {
                                     name="password"
                                     component={TextInput}
                                     placeholder="Password"
-                                    type="text"
+                                    type="password"
                                     icon="lock icon"
                                 />
                                 <Button color="violet" fluid size="large" disabled={submitting}>
