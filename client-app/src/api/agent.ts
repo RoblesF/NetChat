@@ -21,6 +21,15 @@ axios.interceptors.response.use(undefined, (error) => {
 
 })
 
+axios.interceptors.request.use((config) => {
+    const token = window.localStorage.getItem('jwt')
+
+    if (token)
+        config.headers.authorization = `Bearer ${token}`
+
+    return config
+}, (error) => Promise.reject(error))
+
 const responseBody = (response: AxiosResponse) => response.data
 
 const request = {
