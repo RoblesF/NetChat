@@ -1,6 +1,6 @@
 import { configure } from 'mobx'
 import { createContext } from 'react'
-import { ChannelStore } from './channelStore'
+import ChannelStore from './channelStore'
 import UserStore from './userStore'
 
 configure({ enforceActions: 'always' })

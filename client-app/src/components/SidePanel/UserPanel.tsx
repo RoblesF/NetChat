@@ -1,12 +1,17 @@
-import React from "react"
-import { Dropdown, Grid, Header, Icon } from "semantic-ui-react"
+import React, { useContext } from "react"
+import { Link } from "react-router-dom"
+import { Dropdown, Grid, Header, Icon, Message } from "semantic-ui-react"
+import { RootStoreContext } from "../../stores/rootStore"
 
 export const UserPanel = () => {
+    const rootStore = useContext(RootStoreContext)
+    const { user } = rootStore.userStore
+
     const dropdownOptions = () => [{
         key: 'user',
         text: (
             <span>
-                Logged as: <strong>Elizabeth</strong>
+                Logged as: <strong>{user?.email}</strong>
             </span>
         ),
         disabled: true
@@ -30,10 +35,12 @@ export const UserPanel = () => {
                 </Grid.Row>
                 <Header style={{ padding: '.25em' }} as="h4" inverted>
                     <Dropdown
-                        trigger={<span>User</span>}
+                        trigger={<span>{user?.userName}</span>}
                         options={dropdownOptions()}
-
                     ></Dropdown>
+                    <Message>
+                        Don't have an account? <Link to="/signup">Sign up</Link>
+                    </Message>
                 </Header>
             </Grid.Column>
         </Grid>

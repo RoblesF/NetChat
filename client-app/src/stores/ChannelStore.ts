@@ -3,7 +3,7 @@ import { channelsAgent } from "../api/agent";
 import { IChannel } from "../models/channels";
 import { RootStore } from "./rootStore";
 
-export class ChannelStore {
+export default class ChannelStore {
     @observable channelsMobx: IChannel[] = []
     @observable isModalVisible: boolean = false
     rootStore: RootStore

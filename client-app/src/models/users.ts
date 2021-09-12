@@ -1,7 +1,7 @@
 export interface IUser {
-    UserName: string,
-    Email: string,
-    Token: string
+    userName: string,
+    email: string,
+    token: string
 }
 
 export interface ISignForm {

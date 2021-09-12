@@ -2,6 +2,7 @@ import { action, computed, makeObservable, observable, runInAction } from "mobx"
 import { usersAgent } from "../api/agent";
 import { ISignForm, IUser } from "../models/users";
 import { RootStore } from "./rootStore";
+import { History } from '../index'
 
 export default class UserStore {
     @observable user: IUser | null = null
@@ -21,7 +22,7 @@ export default class UserStore {
             const user = await usersAgent.signin(values)
             runInAction(() => {
                 this.user = user
-                console.log(user)
+                History.push('/')
             })
         } catch (error) {
             throw error
