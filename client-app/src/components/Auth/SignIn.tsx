@@ -1,15 +1,21 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Button, Form, Grid, Header, Icon, Message, Segment } from "semantic-ui-react"
+import { Button, Form, Grid, Header, Icon, Label, Message, Segment } from "semantic-ui-react"
 import { Form as FinalForm, Field } from 'react-final-form'
 import { TextInput } from "../Common/Form/TextInput"
+import { useContext } from "react"
+import { RootStoreContext } from "../../stores/rootStore"
+import { ISignForm } from "../../models/users"
+import { FORM_ERROR } from "final-form"
 
 export const SignIn = () => {
-    const sleep = (ms: any) => new Promise((resolve) => setTimeout(resolve, ms))
-    const showResults = async (values: any) => {
-        await sleep(1000)
-        console.log(values)
+    const rootStore = useContext(RootStoreContext)
+    const { signin } = rootStore.userStore
+
+    const handleFormSubmit = async (values: ISignForm) => {
+        return signin(values).catch((error) => ({ [FORM_ERROR]: error }))
     }
+
     return (
         <Grid textAlign="center" verticalAlign="middle" className="app">
             <Grid.Column style={{ maxWidth: 450 }}>
@@ -17,8 +23,8 @@ export const SignIn = () => {
                     <Icon name="code branch" color="violet" /> SignIn to NetChat
                 </Header>
                 <FinalForm
-                    onSubmit={showResults}
-                    render={({ handleSubmit, submitting, values }) => (
+                    onSubmit={handleFormSubmit}
+                    render={({ handleSubmit, submitting, form, submitError }) => (
                         <Form size="large" onSubmit={handleSubmit}>
                             <Segment stacked>
                                 <Field
@@ -38,7 +44,8 @@ export const SignIn = () => {
                                 <Button color="violet" fluid size="large" disabled={submitting}>
                                     Submit
                                 </Button>
-                                <pre>{JSON.stringify(values)}</pre>
+                                {submitError && (<Label color="red" basic content={submitError.statusText} />)}
+                                <pre style={{ textAlign: 'left' }}>{JSON.stringify(form.getState(), undefined, 2)}</pre>
                             </Segment>
                         </Form>
                     )} />

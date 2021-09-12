@@ -14,8 +14,11 @@ axios.interceptors.response.use(undefined, (error) => {
 
     const { status } = error.response;
 
-    status === 404 && History.push('/notfound')
+    // status === 404 && History.push('/notfound')
     status === 500 && toast.error('500 Server error')
+
+    throw error.response
+
 })
 
 const responseBody = (response: AxiosResponse) => response.data
