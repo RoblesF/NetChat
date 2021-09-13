@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -45,7 +46,7 @@ namespace Application.User
 
                 if (user is null)
                 {
-                    throw new RestException(HttpStatusCode.NotFound, new { user = "404 Not found" });
+                    throw new RestException(HttpStatusCode.Unauthorized, new { user = "User not found" });
                 }
 
                 SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
@@ -60,7 +61,7 @@ namespace Application.User
                     };
                 }
 
-                throw new RestException(HttpStatusCode.Unauthorized);
+                throw new Exception("Something happened");
             }
         }
     }
