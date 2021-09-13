@@ -28,7 +28,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<Unit> CreateChannel(Create.Command command)
+        public async Task<Unit> Create(Create.Command command)
         {
             return await Mediator.Send(command);
         }
