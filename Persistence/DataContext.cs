@@ -7,11 +7,13 @@ namespace Persistence
 {
     public class DataContext : IdentityDbContext<AppUser>
     {
-        public DbSet<Channel> Channels { get; set; }
         public DataContext(DbContextOptions options) : base(options)
         {
 
         }
+
+        public DbSet<Channel> Channels { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +37,11 @@ namespace Persistence
                 Name = "React JS",
                 Description = "Canal dedicado a React JS"
             });
+
+            modelBuilder.Entity<Message>()
+            .HasOne(x => x.Sender)
+            .WithMany(x => x.Messages)
+            .HasForeignKey(x => x.SenderId);
         }
     }
 }
