@@ -1,12 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Button, Form, Segment } from "semantic-ui-react"
 import { Field, Form as FinalForm } from 'react-final-form'
 import { IMessageForm } from "../../models/messages"
 import { TextInput } from "../Common/Form/TextInput"
+import { RootStoreContext } from "../../stores/rootStore"
+import { FORM_ERROR } from "final-form"
 
 export const MessageForm = () => {
+    const rootStore = useContext(RootStoreContext)
+    const { sendMessage } = rootStore.messageStore
     const handleFormSubmit = async (values: IMessageForm) => {
-
+        await sendMessage(values).catch((error) => ({ [FORM_ERROR]: error }))
     }
     return (
         <FinalForm
