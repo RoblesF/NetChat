@@ -22,4 +22,15 @@ export default class MessageStore {
             throw error
         }
     }
+
+    @action loadMessages = async (channelId: string) => {
+        try {
+            const result = await this.rootStore.channelStore.detail(channelId)
+            runInAction(() => {
+                result.messages?.map((message) => this.messages.push(message))
+            })
+        } catch (error) {
+            throw error
+        }
+    }
 }

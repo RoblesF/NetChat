@@ -9,7 +9,8 @@ const ChannelForm: React.FC = () => {
     const emptyChannel = {
         id: '',
         name: '',
-        description: ''
+        description: '',
+        messages: []
     }
 
     const [channel, setChannel] = useState<IChannel>(emptyChannel)
