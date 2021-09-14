@@ -5,10 +5,13 @@ import { Form, FormFieldProps, Label } from "semantic-ui-react"
 interface IProps extends FieldRenderProps<string, HTMLElement>, FormFieldProps {
 
 }
-export const TextInput: React.FC<IProps> = ({ placeholder, type, icon, input, meta: { touched, error } }) => {
+export const TextInput: React.FC<IProps> = ({ placeholder, type, icon, input, meta: { touched, error }, iconLabel }) => {
     return (
         <Form.Input fluid iconPosition="left" type={type} placeholder={placeholder}>
-            <input {...input} />
+            {iconLabel && (
+                <button className="ui icon button label button__icon"><i aria-hidden="true" className="add icon"></i></button>
+            )}
+            <input {...input} className={iconLabel ? 'input__icon' : ''} />
             {touched && error && (
                 <Label basic color="red">
                     {error}

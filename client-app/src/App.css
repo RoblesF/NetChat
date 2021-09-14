@@ -5,3 +5,16 @@ body,
   background: #eee;
   padding: 1em;
 }
+
+.input__icon {
+  border-top-right-radius: 0 !important;
+  border-left-color: transparent !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+.button__icon {
+  border-top-right-radius: 0 !important;
+  font-size: 1em !important;
+  margin: 0 !important;
+}
