@@ -19,6 +19,7 @@ namespace Application.User
             public string Username { get; set; }
             public string Email { get; set; }
             public string Password { get; set; }
+            public string Avatar { get; set; }
         }
 
         public class CommandValidator : AbstractValidator<Command>
@@ -52,7 +53,8 @@ namespace Application.User
                 AppUser user = new AppUser
                 {
                     Email = request.Email,
-                    UserName = request.Username
+                    UserName = request.Username,
+                    Avatar = request.Avatar
                 };
 
                 IdentityResult result = await _userManager.CreateAsync(user, request.Password);
