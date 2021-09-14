@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Errors;
 using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 namespace Application.Channels
@@ -25,7 +26,7 @@ namespace Application.Channels
             }
             public async Task<Channel> Handle(Query request, CancellationToken cancellationToken)
             {
-                var channel = await _context.Channels.FindAsync(request.Id);
+                var channel = await _context.Channels.Include(x => x.Messages).SingleOrDefaultAsync(x => x.Id == request.Id);
 
                 if (channel is null)
                     throw new RestException(HttpStatusCode.NotFound, new { channel = "Not found" });
