@@ -3,6 +3,7 @@ import { IChannel } from '../models/channels';
 import { History } from '../index';
 import { toast } from 'react-toastify';
 import { ISignForm, IUser } from '../models/users'
+import { IMessage, IMessageForm } from '../models/Messages';
 
 axios.defaults.baseURL = 'http://localhost:5000/api'
 
@@ -48,4 +49,8 @@ export const usersAgent = {
     signin: (user: ISignForm): Promise<IUser> => request.post('/users/signin', user),
     signup: (user: ISignForm): Promise<IUser> => request.post('/users/signup', user),
     getcurrentuser: (): Promise<IUser> => request.get('/users/getcurrentuser')
+}
+
+export const messagesAgent = {
+    create: (message: IMessageForm): Promise<IMessage> => request.post('/messages/create', message)
 }
