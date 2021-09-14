@@ -6,6 +6,7 @@ import { RootStore } from "./rootStore";
 export default class ChannelStore {
     @observable channelsMobx: IChannel[] = []
     @observable isModalVisible: boolean = false
+    @observable activeChannel: IChannel | null = null
     rootStore: RootStore
 
     constructor(rootStore: RootStore) {
@@ -24,6 +25,14 @@ export default class ChannelStore {
 
     @action setModalVisible = (show: boolean) => {
         this.isModalVisible = show
+    }
+
+    @action setActiveChannel = (channel: IChannel) => {
+        this.activeChannel = channel
+    }
+
+    @action getCurrentChannel = () => {
+        return this.activeChannel ?? this.channelsMobx[0]
     }
 
     @action createChannel = async (channel: IChannel) => {
