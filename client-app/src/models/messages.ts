@@ -3,7 +3,7 @@ import { IUser } from "./users";
 export interface IMessage {
     content: string
     createdAt: Date
-    user: IUser
+    sender: IUser
 }
 
 export interface IMessageForm {

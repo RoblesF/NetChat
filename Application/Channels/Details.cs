@@ -26,7 +26,7 @@ namespace Application.Channels
             }
             public async Task<Channel> Handle(Query request, CancellationToken cancellationToken)
             {
-                var channel = await _context.Channels.Include(x => x.Messages).SingleOrDefaultAsync(x => x.Id == request.Id);
+                var channel = await _context.Channels.Include(x => x.Messages).ThenInclude(x => x.Sender).SingleOrDefaultAsync(x => x.Id == request.Id);
 
                 if (channel is null)
                     throw new RestException(HttpStatusCode.NotFound, new { channel = "Not found" });

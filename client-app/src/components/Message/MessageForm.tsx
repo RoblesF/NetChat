@@ -15,8 +15,8 @@ export const MessageForm = () => {
     return (
         <FinalForm
             onSubmit={handleFormSubmit}
-            render={({ handleSubmit }) => (
-                <Form onSubmit={handleSubmit}>
+            render={({ handleSubmit, form }) => (
+                <Form onSubmit={() => handleSubmit()!.then(() => form.reset())}>
                     <Segment>
                         <Field
                             fluid

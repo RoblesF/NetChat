@@ -18,3 +18,8 @@ body,
   font-size: 1em !important;
   margin: 0 !important;
 }
+
+.message__self {
+  border-left: 2px solid orange;
+  padding-left: 8p;
+}
