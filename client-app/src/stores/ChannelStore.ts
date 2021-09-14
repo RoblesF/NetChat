@@ -35,6 +35,15 @@ export default class ChannelStore {
         return this.activeChannel ?? this.channelsMobx[0]
     }
 
+    @action detail = async (channelId: string): Promise<IChannel> => {
+        try {
+            return await channelsAgent.detail(channelId)
+        } catch (error) {
+            throw error
+        }
+
+    }
+
     @action createChannel = async (channel: IChannel) => {
         try {
             await channelsAgent.create(channel)
