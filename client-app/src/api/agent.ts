@@ -3,7 +3,7 @@ import { IChannel } from '../models/channels';
 import { History } from '../index';
 import { toast } from 'react-toastify';
 import { ISignForm, IUser } from '../models/users'
-import { IMessage, IMessageForm } from '../models/Messages';
+import { IMessage, IMessageForm } from '../models/messages';
 
 axios.defaults.baseURL = 'http://localhost:5000/api'
 
@@ -15,7 +15,7 @@ axios.interceptors.response.use(undefined, (error) => {
 
     const { status } = error.response;
 
-    // status === 404 && History.push('/notfound')
+    status === 404 && History.push('/notfound')
     status === 500 && toast.error('500 Server error')
 
     throw error.response

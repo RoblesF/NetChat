@@ -1,6 +1,6 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import { messagesAgent } from "../api/agent";
-import { IMessage, IMessageForm } from "../models/Messages";
+import { IMessage, IMessageForm } from "../models/messages";
 import { RootStore } from "./rootStore";
 
 export default class MessageStore {

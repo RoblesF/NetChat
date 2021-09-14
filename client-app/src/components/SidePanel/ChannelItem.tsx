@@ -4,14 +4,15 @@ import { IChannel } from "../../models/channels"
 
 interface IProps {
     channel: IChannel
+    changeChannel: (channel: IChannel) => void
 }
 
-export const ChannelItem: React.FC<IProps> = ({ channel }) => {
+export const ChannelItem: React.FC<IProps> = ({ channel, changeChannel }) => {
     const { id, name } = channel
     return (
         <Menu.Item
             key={id}
-            onClick={() => console.log(channel)}
+            onClick={() => changeChannel(channel)}
             name={name}
             style={{ opacity: 0.7 }}
         >

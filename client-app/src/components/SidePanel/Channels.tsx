@@ -14,13 +14,17 @@ const Channels = () => {
         loadChannels()
     }, [loadChannels])
 
+    const changeChannel = (channel: IChannel) => {
+        console.log(channel)
+    }
+
     const displayChannels = (channels: IChannel[]) => {
         return (
             channels.length > 0 &&
             channels.map((channel) => {
                 const { id } = channel;
                 return (
-                    <ChannelItem key={id} channel={channel} />
+                    <ChannelItem key={id} channel={channel} changeChannel={changeChannel} />
                 )
             })
         )
