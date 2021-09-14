@@ -9,6 +9,7 @@ import { RootStoreContext } from "../../stores/rootStore"
 const Channels = () => {
     const rootStore = useContext(RootStoreContext)
     const { channelsMobx, loadChannels, setModalVisible, setActiveChannel, getCurrentChannel } = rootStore.channelStore
+    const { loadMessages } = rootStore.messageStore
 
     useEffect(() => {
         loadChannels()
@@ -16,6 +17,7 @@ const Channels = () => {
 
     const changeChannel = (channel: IChannel) => {
         setActiveChannel(channel)
+        loadMessages(getCurrentChannel()?.id!)
         console.log({ ...getCurrentChannel() })
     }
 

@@ -7,6 +7,7 @@ export default class ChannelStore {
     @observable channelsMobx: IChannel[] = []
     @observable isModalVisible: boolean = false
     @observable activeChannel: IChannel | null = null
+    @observable isChannelLoaded: boolean = false
     rootStore: RootStore
 
     constructor(rootStore: RootStore) {
@@ -17,7 +18,10 @@ export default class ChannelStore {
     @action loadChannels = async () => {
         try {
             const response = await channelsAgent.list()
-            runInAction(() => response.map((channel) => this.channelsMobx.push(channel)))
+            runInAction(() => {
+                response.map((channel) => this.channelsMobx.push(channel))
+                this.isChannelLoaded = true
+            })
         } catch (error) {
             console.error(error)
         }

@@ -26,6 +26,7 @@ export default class MessageStore {
     @action loadMessages = async (channelId: string) => {
         try {
             const result = await this.rootStore.channelStore.detail(channelId)
+            console.log(`messages:${JSON.stringify(result, undefined, 2)}`)
             runInAction(() => {
                 result.messages?.map((message) => this.messages.push(message))
             })
