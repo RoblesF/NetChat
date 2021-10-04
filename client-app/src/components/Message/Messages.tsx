@@ -1,10 +1,11 @@
+import { observer } from "mobx-react-lite"
 import React, { useContext, useEffect } from "react"
 import { Segment, Comment } from "semantic-ui-react"
 import { IMessage } from "../../models/messages"
 import { RootStoreContext } from "../../stores/rootStore"
 import Message from "./Message"
 import { MessageForm } from "./MessageForm"
-import { MessagesHeader } from "./MessagesHeader"
+import MessagesHeader from "./MessagesHeader"
 
 export const Messages = () => {
     const rootStore = useContext(RootStoreContext)
@@ -28,7 +29,7 @@ export const Messages = () => {
     return (
         <React.Fragment>
             {/*Header*/}
-            <MessagesHeader />
+            <MessagesHeader currentChannel={getCurrentChannel()} />
             <Segment>
                 <Comment.Group>
                     {displayMessages(messages)}
@@ -38,3 +39,5 @@ export const Messages = () => {
         </React.Fragment>
     )
 }
+
+export default observer(Messages)

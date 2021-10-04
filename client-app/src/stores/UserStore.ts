@@ -35,4 +35,15 @@ export default class UserStore {
         this.user = null
         History.push('/signin')
     }
+
+    @action getUser = async () => {
+        try {
+            const user = await usersAgent.getcurrentuser()
+            runInAction(() => {
+                this.user = user
+            })
+        } catch (error) {
+            throw error
+        }
+    }
 }

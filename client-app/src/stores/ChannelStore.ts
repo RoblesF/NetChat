@@ -1,4 +1,4 @@
-import { action, makeObservable, observable, runInAction } from "mobx";
+import { action, makeObservable, observable, runInAction, toJS } from "mobx";
 import { channelsAgent } from "../api/agent";
 import { IChannel } from "../models/channels";
 import { RootStore } from "./rootStore";
@@ -36,7 +36,7 @@ export default class ChannelStore {
     }
 
     @action getCurrentChannel = () => {
-        return this.activeChannel ?? this.channelsMobx[0]
+        return toJS(this.activeChannel ?? this.channelsMobx[0])
     }
 
     @action detail = async (channelId: string): Promise<IChannel> => {
@@ -45,7 +45,6 @@ export default class ChannelStore {
         } catch (error) {
             throw error
         }
-
     }
 
     @action createChannel = async (channel: IChannel) => {

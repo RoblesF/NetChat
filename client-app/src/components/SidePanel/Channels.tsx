@@ -13,12 +13,11 @@ const Channels = () => {
 
     useEffect(() => {
         loadChannels()
-    }, [loadChannels])
+    }, [loadChannels, setActiveChannel])
 
     const changeChannel = (channel: IChannel) => {
         setActiveChannel(channel)
         loadMessages(getCurrentChannel()?.id!)
-        console.log({ ...getCurrentChannel() })
     }
 
     const displayChannels = (channels: IChannel[]) => {

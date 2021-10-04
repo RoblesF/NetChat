@@ -17,6 +17,7 @@ axios.interceptors.response.use(undefined, (error) => {
 
     status === 404 && History.push('/notfound')
     status === 500 && toast.error('500 Server error')
+    status === 401 && History.push('/signin')
 
     throw error.response
 

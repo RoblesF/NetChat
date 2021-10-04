@@ -1,8 +1,14 @@
+import { observer } from "mobx-react-lite"
 import React from "react"
 import { Header, Icon, Segment } from "semantic-ui-react"
+import { IChannel } from "../../models/channels"
 import { SearchInput } from "./SearchInput"
 
-export const MessagesHeader = () => {
+interface IProps {
+    currentChannel: IChannel | null
+}
+
+const MessagesHeader: React.FC<IProps> = ({ currentChannel }) => {
     return (
         <Segment clearing>
             <Header
@@ -12,7 +18,7 @@ export const MessagesHeader = () => {
                 style={{ marginBottom: 0 }}
             >
                 <span>
-                    Channel
+                    {currentChannel?.name}
                     <Icon name={'star outline'} color="black" />
                 </span>
                 <Header.Subheader>4 Users</Header.Subheader>
@@ -22,3 +28,5 @@ export const MessagesHeader = () => {
         </Segment>
     )
 }
+
+export default observer(MessagesHeader)
