@@ -6,7 +6,7 @@ import MessageStore from './messageStore'
 import UserStore from './userStore'
 
 configure({ enforceActions: 'always' })
-
+ 
 export class RootStore {
     channelStore: ChannelStore
     userStore: UserStore
